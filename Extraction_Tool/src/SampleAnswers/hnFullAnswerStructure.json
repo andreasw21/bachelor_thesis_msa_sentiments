@@ -1,0 +1,35 @@
+{
+    "exhaustive": {
+      "nbHits": False, // not all results might have been returned
+      "typo": False
+    },
+    "exhaustiveNbHits": False,
+    "exhaustiveTypo": False,
+    "hits":[], //stories that were returned
+    "hitsPerPage": 20,//hits (stories) to be returned per page
+    "nbHits": 26691,// total number of hits (stories) that match the search query 
+    "nbPages": 50,//number of pages available
+    "page": 0,//current page of the results
+    "params": "query=foo&tags=story&advancedSyntax=true&analyticsTags=backend",
+    "processingTimeMS": 10,
+    "processingTimingsMS": {
+      "_request": {
+        "roundTrip": 21
+      },
+      "afterFetch": {
+        "merge": {
+          "total": 2
+        },
+        "total": 2
+      },
+      "fetch": {
+        "query": 2,
+        "scanning": 4,
+        "total": 7
+      },
+      "total": 10
+    },
+    "query": "foo",
+    "serverTimeMS": 11
+  }
+  

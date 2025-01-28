@@ -1,0 +1,8 @@
+The Tool's accuracy will be evaluated by comparing it to manual lables.
+ 
+Statistical Metrics:
+-1 - Precision: 0.94, Recall: 0.65, F1-Score: 0.77
+0 - Precision: 0.42, Recall: 1.00, F1-Score: 0.59
+1 - Precision: 1.00, Recall: 0.20, F1-Score: 0.33
+macro avg - Precision: 0.79, Recall: 0.62, F1-Score: 0.57
+weighted avg - Precision: 0.82, Recall: 0.64, F1-Score: 0.63

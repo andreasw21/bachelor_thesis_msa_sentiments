@@ -1,0 +1,13 @@
+myenv/
+HackerNewsApi/hnApi.py
+RedditApi/redditApiNotes.py
+microserviceAnalysis/.Filter/__pycache__/
+microserviceAnalysis/RedditApi/__pycache__/
+microserviceAnalysis/.HackerNewsApi/__pycache__/
+microserviceAnalysis/**/__pycache__/
+SentimentAnalysis/
+Unused/
+microserviceAnalysis/src/.vscode
+microserviceAnalysis/src/Utils/__pycache__/
+microserviceAnalysis/src/__pycache__/
+microserviceAnalysis/ShowPreproessing/

@@ -1,0 +1,9 @@
+
+Sentiment Analysis Summary for the files in ./Labelled_Discussions/EASTER/Improved/Shorter_than_100_words: 
+ ['Labelled_Discussions\\EASTER\\Improved\\Shorter_than_100_words\\less_than_100_words.csv']
+------------------------------
+Total Entries: 72
+Positive Sentiments: 2 (2.78%)
+Negative Sentiments: 24 (33.33%)
+Neutral Sentiments:  46 (63.89%)
+------------------------------

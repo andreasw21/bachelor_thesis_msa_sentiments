@@ -1,0 +1,9 @@
+
+Sentiment Analysis Summary for the files in ./Labelled_Discussions/EASTER/Improved/After_ChatGPT_Shortening: 
+ ['Labelled_Discussions\\EASTER\\Improved\\After_ChatGPT_Shortening\\easter_predictions.csv']
+------------------------------
+Total Entries: 96
+Positive Sentiments: 0 (0.00%)
+Negative Sentiments: 8 (8.33%)
+Neutral Sentiments:  88 (91.67%)
+------------------------------

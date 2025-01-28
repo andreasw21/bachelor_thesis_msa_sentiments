@@ -1,0 +1,9 @@
+
+Sentiment Analysis Summary for the files in ./Labelled_Discussions/EASTER/Improved/Shorter_than_50_words: 
+ ['Labelled_Discussions\\EASTER\\Improved\\Shorter_than_50_words\\easter_predictions.csv']
+------------------------------
+Total Entries: 44
+Positive Sentiments: 2 (4.55%)
+Negative Sentiments: 16 (36.36%)
+Neutral Sentiments:  26 (59.09%)
+------------------------------

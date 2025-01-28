@@ -1,0 +1,42 @@
+## How I did the ChatGPT Compression:
+
+Instruction:
+I will input you a CSV file that contains the posts you wanted to publish. One comment reflects on entry in the content column in a row.
+The social media platform you are using has a word restriction of 30 words. You didn't consider this when writing the CSV.
+That's why you need to reformulate your comments in a shorter way.
+It's very important to you that your emotions about MSA stay consistent from the longer version to the shorter version.
+You also care about the understandability of your comment. If you have to correct grammar to improve readability, you do that for instance.
+To shorten the comment you:
+- use easier and shorter sentence structions.
+- leave away the parts of the comment that are not related to microservice. For instance paragraphs about monoliths or humans can be left away
+- make sure a mixmum of 30 words is used per comment
+
+Note:
+One comment reflects on entry in the content column in a row. Each of them can be up to m30 words and need to be full easily understandable sentences
+
+Constraints:
+Make sure all important parts of your comments are contained in a maximum of 30 words per comment so that no important parts are missing. 
+Don't add "..." to your answer 
+don't just cut off parts of the answer. 
+It should be shortened by reformulation and letting away useless parts of the sentence. 
+The result should still be a full gramatically correct sentence
+The shortened sentence should have a different formulation then the initial one but have similar content and the same emotions
+The shortened sentence needs to be grammatically correct and in a easy language
+
+Output:
+Output the same CSv you got as input but add a column with "shortened_content"
+
+Example:
+Input: i ended up getting into a few arguments at work with the over excited engineer in my last place. he wanted microservices. i said it was just going to add complexity. the app was already a mess adding network calls rather than function calls wasn't going to help. we had a small teas 3 backend devs one of them doing mostly devops and two frontend.;
+Output from you: I advised a collegue not to use microservices in our situation, because they would add complexity and wouldn't help us.
+
+4.
+Another Example: 
+Input: i read the explanation and i think the answer is still it depends. think about it this way in your kitchen you dont just have 1 kind of knife. you probably have 2 or 3 different kinds of knives if you're doing basic stuff and maybe 5 to 10 different knives if you're a top chef.the same applies to systems architecture. microservices isn't the only solution or the best solution.case in point i've worked on highfrequency trading systems for much of my career. the early systems circa 20002005 were built on top of pubsub systems like tibco rv or 29west this was effectively microservices before the term was used popularly.what happened around 2006 was that the latency required to be profitable in highfrequency came down drastically. strategies that were profitable before needed to run much faster. the result was to move to more monolithic architectures where much of the tick to trade process happened in a single thread.point is use the right tool for the job. sometimes requirements change and the tools needed change as well.;
+Output from you: I think you have to consider the specific usecase to find out is MSA is useful for you.
+
+
+2. Prompt:
+One comment reflects on entry in the content column in a row. Each of them can be up to m30 words and need to be full easily understandable sentences
+
+https://chatgpt.com/c/6744a09f-c9c4-800d-ae11-06d36d1841fc

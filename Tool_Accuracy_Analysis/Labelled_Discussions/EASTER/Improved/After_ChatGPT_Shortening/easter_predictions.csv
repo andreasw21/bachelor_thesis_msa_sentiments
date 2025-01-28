@@ -1,0 +1,97 @@
+ID;Source;CreationDate;Content;ManualSentiment;EASTERSentiment
+23453639;HackerNews;2020-06-08;Microservices need careful thought to avoid unnecessary challenges.;0;0
+23453562;HackerNews;2020-06-08;An engineer supported microservices, but I argued they added unnecessary complexity.;-1;0
+23453068;HackerNews;2020-06-08;Architectural choices depend on specific use cases and project requirements.;1;0
+23452837;HackerNews;2020-06-08;Microservices need careful thought to avoid unnecessary challenges.;-1;0
+23452626;HackerNews;2020-06-08;Microservices architecture is powerful but requires proper design and alignment with goals.;-1;0
+23452097;HackerNews;2020-06-08;Microservices need careful thought to avoid unnecessary challenges.;-1;0
+23451680;HackerNews;2020-06-08;Microservices need careful thought to avoid unnecessary challenges.;1;0
+23451147;HackerNews;2020-06-07;In my experience, microservices fit certain cases but aren't always the best solution.;1;0
+23450591;HackerNews;2020-06-07;Microservices architecture is powerful but requires proper design and alignment with goals.;0;0
+23450438;HackerNews;2020-06-07;Microservices need careful thought to avoid unnecessary challenges.;-1;0
+23450342;HackerNews;2020-06-07;Microservices architecture is powerful but requires proper design and alignment with goals.;0;0
+23450266;HackerNews;2020-06-07;Microservices need careful thought to avoid unnecessary challenges.;-1;0
+23450259;HackerNews;2020-06-07;Microservices can help, but their usefulness depends on the situation.;1;0
+23450219;HackerNews;2020-06-07;microservice testing come with version combination hell.if you have 10 microservices each of which can be on one of two versions that's 1024 combinations. how do you test that?;-1;0
+23450158;HackerNews;2020-06-07;Microservices need careful thought to avoid unnecessary challenges.;1;0
+23450116;HackerNews;2020-06-07;Microservices need careful thought to avoid unnecessary challenges.;-1;0
+23449910;HackerNews;2020-06-07;at a goto talk an uber engineer said they had so many microservices it was impossible to really count how many they had;-1;0
+23449884;HackerNews;2020-06-07;Microservices architecture is powerful but requires proper design and alignment with goals.;0;0
+23449768;HackerNews;2020-06-07;Microservices need careful thought to avoid unnecessary challenges.;1;0
+23449762;HackerNews;2020-06-07;Architectural choices depend on specific use cases and project requirements.;1;0
+23449744;HackerNews;2020-06-07;An engineer supported microservices, but I argued they added unnecessary complexity.;1;0
+23449738;HackerNews;2020-06-07;Microservices need careful thought to avoid unnecessary challenges.;1;0
+23449672;HackerNews;2020-06-07;Microservices architecture is powerful but requires proper design and alignment with goals.;0;0
+38174497;HackerNews;2023-11-07;Microservices need careful thought to avoid unnecessary challenges.;-1;0
+38130050;HackerNews;2023-11-03;An engineer supported microservices, but I argued they added unnecessary complexity.;1;0
+38088383;HackerNews;2023-10-31;Architectural choices depend on specific use cases and project requirements.;-1;0
+38086139;HackerNews;2023-10-31;An engineer supported microservices, but I argued they added unnecessary complexity.;-1;0
+38084540;HackerNews;2023-10-31;Microservices architecture is powerful but requires proper design and alignment with goals.;-1;0
+38082191;HackerNews;2023-10-31;maybe logging should be a microservice....;0;0
+38082454;HackerNews;2023-10-31;Microservices need careful thought to avoid unnecessary challenges.;-1;0
+38083263;HackerNews;2023-10-31;Architectural choices depend on specific use cases and project requirements.;0;0
+38083186;HackerNews;2023-10-31;Microservices need careful thought to avoid unnecessary challenges.;0;0
+38082898;HackerNews;2023-10-31;Microservices architecture is powerful but requires proper design and alignment with goals.;0;0
+38079931;HackerNews;2023-10-31;Microservices need careful thought to avoid unnecessary challenges.;0;0
+38077876;HackerNews;2023-10-31;in the department i work there's a lot of microservices about 56 so 56 teams. but everything is quarkusspring java and nothing else.;0;0
+38075700;HackerNews;2023-10-30;really doesn't make sense to me that people jump to microservices rather than creating module boundaries in their monolith.;-1;-1
+38076765;HackerNews;2023-10-30;ymmv but i think you can only do that if you have a monorepo with the shared library and all the microservices;0;0
+38076540;HackerNews;2023-10-30;Microservices architecture is powerful but requires proper design and alignment with goals.;1;0
+38076411;HackerNews;2023-10-30;Microservices need careful thought to avoid unnecessary challenges.;1;0
+38077939;HackerNews;2023-10-31;Microservices need careful thought to avoid unnecessary challenges.;1;0
+38074617;HackerNews;2023-10-30;microservices not being able to talk to each other the network basically never comes up.what you are saying is outright ridiculous.;-1;-1
+38072897;HackerNews;2023-10-30;can you point to a comment on hn saying microservices are never justified?;0;0
+38073768;HackerNews;2023-10-30;open source projects rarely involve live services or providing saas. in those situations i think microservices are much more helpful;1;0
+38071736;HackerNews;2023-10-30;microservices is a newer term than soa.;0;0
+38070872;HackerNews;2023-10-30;if your company has a microservice architecture but doesn't have proper knowledge on how should they communicate how should they share code etc then it is the worst thing possible.;-1;-1
+hgs6zn9;Reddit;2021-10-15 22:31:59;Microservices add complexity and aren't always needed for small projects.;0;0
+hgs5ewd;Reddit;2021-10-15 22:20:37;Architectural choices depend on specific use cases and project requirements.;0;0
+hgrbb7o;Reddit;2021-10-15 18:52:06;Microservices need careful thought to avoid unnecessary challenges.;1;0
+hgtgs4d;Reddit;2021-10-16 04:55:26;Microservices architecture is powerful but requires proper design and alignment with goals.;-1;0
+hgr0i35;Reddit;2021-10-15 17:38:35;Microservices need careful thought to avoid unnecessary challenges.;0;0
+hgrra2i;Reddit;2021-10-15 20:41:00;Microservices need careful thought to avoid unnecessary challenges.;1;0
+hgt83g3;Reddit;2021-10-16 03:36:34;Microservices need careful thought to avoid unnecessary challenges.;0;0
+hgu8ia5;Reddit;2021-10-16 10:27:05;Microservices need careful thought to avoid unnecessary challenges.;-1;0
+hgsw3yw;Reddit;2021-10-16 01:51:12;i swear to god people need to shut the fuck up about monoliths and microservices and just build their shit with some foresight. fuck off;-1;-1
+hgst8fc;Reddit;2021-10-16 01:27:12;Microservices need careful thought to avoid unnecessary challenges.;1;0
+hgttjj3;Reddit;2021-10-16 07:06:56;Microservices need careful thought to avoid unnecessary challenges.;-1;0
+hgty4ad;Reddit;2021-10-16 08:02:39;Microservices need careful thought to avoid unnecessary challenges.;0;0
+hgxnmwh;Reddit;2021-10-17 04:01:26;Microservices need careful thought to avoid unnecessary challenges.;-1;0
+hgrxkjc;Reddit;2021-10-15 21:24:42;In my experience, microservices fit certain cases but aren't always the best solution.;1;0
+hgr6bzm;Reddit;2021-10-15 18:18:11;Microservices need careful thought to avoid unnecessary challenges.;0;0
+hgsdx3t;Reddit;2021-10-15 23:23:42;Microservices architecture is powerful but requires proper design and alignment with goals.;0;0
+hgr5tf3;Reddit;2021-10-15 18:14:39;microservices primarily allow developer scale in my experience you omitted word complexity. microservices scale process complexity upwards. the moment you opt to do them you fall for all network fallacies.;-1;0
+hh3x2q6;Reddit;2021-10-18 15:55:41;Microservices need careful thought to avoid unnecessary challenges.;1;0
+hgt8l0i;Reddit;2021-10-16 03:40:55;Microservices need careful thought to avoid unnecessary challenges.;1;0
+hgygp8w;Reddit;2021-10-17 08:48:36;Architectural choices depend on specific use cases and project requirements.;-1;0
+hgv3l4j;Reddit;2021-10-16 16:30:17;Microservices need careful thought to avoid unnecessary challenges.;-1;0
+hgr5735;Reddit;2021-10-15 18:10:21;Microservices need careful thought to avoid unnecessary challenges.;1;0
+hgt8bmu;Reddit;2021-10-16 03:38:32;Microservices need careful thought to avoid unnecessary challenges.;-1;0
+hgsuqg6;Reddit;2021-10-16 01:39:44;Microservices need careful thought to avoid unnecessary challenges.;-1;0
+hgvq7df;Reddit;2021-10-16 19:20:22;Microservices need careful thought to avoid unnecessary challenges.;1;0
+hgt1haf;Reddit;2021-10-16 02:37:19;Microservices need careful thought to avoid unnecessary challenges.;-1;0
+hgsyvn4;Reddit;2021-10-16 02:14:57;Microservices need careful thought to avoid unnecessary challenges.;-1;0
+hgs4vll;Reddit;2021-10-15 22:16:46;Microservices can help, but their usefulness depends on the situation.;1;0
+hgsvutt;Reddit;2021-10-16 01:49:04;An engineer supported microservices, but I argued they added unnecessary complexity.;-1;0
+hgz1yki;Reddit;2021-10-17 13:32:53;Microservices need careful thought to avoid unnecessary challenges.;1;0
+hguv6u0;Reddit;2021-10-16 15:16:35;that was my point. too many microservice advocates think their architecture prevents intermixing of concerns.;-1;0
+hh62ly0;Reddit;2021-10-19 01:17:31;true but by using microservices and containerizing them you can scale more efficiently. there are a lot of benefits to microservices.;1;0
+hgstq2o;Reddit;2021-10-16 01:31:18;Microservices need careful thought to avoid unnecessary challenges.;1;0
+hgtq3jm;Reddit;2021-10-16 06:28:42;Microservices architecture is powerful but requires proper design and alignment with goals.;-1;0
+hgsw2ch;Reddit;2021-10-16 01:50:49;no one intended it to be that. that's just what they turn out to be because no one is self critical enough to realise that microservices don't solve anything.;-1;-1
+kccjok7;Reddit;2023-12-07 11:02:18;Architectural choices depend on specific use cases and project requirements.;-1;0
+kcckrre;Reddit;2023-12-07 11:17:52;Microservices need careful thought to avoid unnecessary challenges.;0;0
+kcctth1;Reddit;2023-12-07 13:10:03;Microservices need careful thought to avoid unnecessary challenges.;1;0
+kchnv0u;Reddit;2023-12-08 12:57:48;guys what if all functions had network latencies? guy about to invent microservices;-1;0
+kccnrx1;Reddit;2023-12-07 11:58:46;microservices suck but nothing will sell me on a giant monolith. giant monoliths are a whole level of suck to whatever you will deal in microservices;-1;-1
+kcdhzlu;Reddit;2023-12-07 16:26:26;Microservices architecture is powerful but requires proper design and alignment with goals.;1;0
+kcfb5t4;Reddit;2023-12-07 23:44:08;Microservices need careful thought to avoid unnecessary challenges.;1;0
+kccl2k3;Reddit;2023-12-07 11:22:00;Architectural choices depend on specific use cases and project requirements.;0;0
+kce6d4s;Reddit;2023-12-07 19:05:48;Microservices need careful thought to avoid unnecessary challenges.;1;0
+kcd2xqe;Reddit;2023-12-07 14:35:10;there's only the bullet lodged in your skull after choosing microservices.;-1;0
+kchyx9u;Reddit;2023-12-08 14:40:30;is the bot using microservices?;0;0
+kcjzf86;Reddit;2023-12-08 22:41:30;Microservices need careful thought to avoid unnecessary challenges.;-1;0
+kcf3mtb;Reddit;2023-12-07 22:56:17;An engineer supported microservices, but I argued they added unnecessary complexity.;-1;0
+kcd6z1x;Reddit;2023-12-07 15:07:35;we still do. this is not a picture of a microservice architecture.;0;0
+kcdm32v;Reddit;2023-12-07 16:53:23;you need good logging practices and distributed tracing to make large microservice deployments work if you dont have those things debugging is a nightmare;-1;-1
+kccmrpg;Reddit;2023-12-07 11:45:21;Poorly designed microservices create more problems and aren't a one-size-fits-all solution.;-1;-1

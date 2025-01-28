@@ -1,0 +1,9 @@
+
+Sentiment Analysis Summary for the files in ./Labelled_Discussions/EASTER/Improved/Microservice_related: 
+ ['Labelled_Discussions\\EASTER\\Improved\\Microservice_related\\easter_predictions.csv']
+------------------------------
+Total Entries: 97
+Positive Sentiments: 6 (6.19%)
+Negative Sentiments: 24 (24.74%)
+Neutral Sentiments:  67 (69.07%)
+------------------------------

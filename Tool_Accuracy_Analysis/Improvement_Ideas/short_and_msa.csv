@@ -1,0 +1,101 @@
+ID,Source,Creation Date,Content,ManualSentiment,ManualSentiment.1
+23453676,HackerNews,2020-06-08,still don't need microservices.  microservices typically outnumber engineers or aren't too far off,-1,-1
+23450266,HackerNews,2020-06-07,if you have ten people working fulltime on it it is not a microservice it is just a service. i think the discussion about microservices has suffered more than anyone realises from a lack of shared understanding about what a microservice actually is,-1,-1
+23450219,HackerNews,2020-06-07,microservice testing come with version combination hell. if you have 10 microservices each of which can be on one of two versions that's 1024 combinations,-1,0
+23450116,HackerNews,2020-06-07,stop off! drop a bunch microservices into the same network without any access control and you don't have a physical barrier at all! in fact it becomes even harder to have a clue as to what's interfacing with what unless you can observe your inter process traffic,-1,-1
+23449910,HackerNews,2020-06-07,at a goto talk an uber engineer said they had so many microservices it was impossible to really count how many they had,-1,0
+23449884,HackerNews,2020-06-07,microservices make the boundary between units defined and forces api design on those boundaries no it doesn't,0,0
+38088383,HackerNews,2023-10-31,and you could easily fall into doing that for microservice architectures,-1,0
+38082191,HackerNews,2023-10-31,maybe logging should be a microservice,0,0
+38082454,HackerNews,2023-10-31,team size is probably the most important factor that should influence the choice about microservices,-1,0
+38077876,HackerNews,2023-10-31,in the department i work there's a lot of microservices about 56 so 56 teams,0,0
+38075700,HackerNews,2023-10-30,really doesn't make sense to me that people jump to microservices rather than creating module boundaries in their monolith,-1,-1
+38076765,HackerNews,2023-10-30,ymmv but i think you can only do that if you have a monorepo with the shared library and all the microservices,0,0
+38076411,HackerNews,2023-10-30,microservices don't cost as much if you deploy them everywhere so you get both vertical and horizontal scaling without lookup cost,1,0
+38077939,HackerNews,2023-10-31,i look forward to 2030 when microservices are all the rage,1,1
+38074617,HackerNews,2023-10-30,microservices not being able to talk to each other the network basically never comes up,-1,-1
+38072897,HackerNews,2023-10-30,can you point to a comment on hn saying microservices are never justified?,0,0
+38073768,HackerNews,2023-10-30,in those situations i think microservices are much more helpful,1,0
+38071736,HackerNews,2023-10-30,microservices is a newer term than soa,0,0
+38070872,HackerNews,2023-10-30,if your company has a microservice architecture but doesn't have proper knowledge on how should they communicate how should they share code etc then it is the worst thing possible,-1,-1
+hgs6zn9,Reddit,2021-10-15 22:31:59,i agree that most companies don't need microservices but that's because most companies are small,0,0
+hgrbb7o,Reddit,2021-10-15 18:52:06,currently in the middle of a multi year migration from monolith to microservices and everything everything about the microservices solution is better,1,1
+hgrra2i,Reddit,2021-10-15 20:41:00,i prefer monolithic design but when i see a system using python functions to send individual commands by opening ssh connections to another device's command line for each microservices sound like a huge improvement nevertheless,1,0
+hgt83g3,Reddit,2021-10-16 03:36:34,first it was monoliths are bad and everyone should use microservices.  monoliths has its place and microservices has its place,0,0
+hgu8ia5,Reddit,2021-10-16 10:27:05,i can't take the we have many developers so we need microservices nonsense anymore,-1,-1
+hgsw3yw,Reddit,2021-10-16 01:51:12,i swear to god people need to shut the fuck up about monoliths and microservices and just build their shit with some foresight,-1,-1
+hgst8fc,Reddit,2021-10-16 01:27:12,i disagree with many commenters that microservices are mainly good for scale.  i think robustness is a more valid reason to use microservices,1,0
+hgttjj3,Reddit,2021-10-16 07:06:56,the biggest annoyance regarding microservices is that everyone builds their own,-1,-1
+hgsdx3t,Reddit,2021-10-15 23:23:42,ive always been of the mind that microservice architectures are an expression of conways law.  thats not a value judgement on microservices they arent good or bad they just are and they have trade offs,0,0
+hgr5tf3,Reddit,2021-10-15 18:14:39,microservices primarily allow developer scale in my experience you omitted word complexity.  microservices scale process complexity upwards,-1,0
+hgt8l0i,Reddit,2021-10-16 03:40:55,large companies also buy many smaller ones in a sense collecting selfcontained services once they've matured and teams already silo'd off from the rest of the developers and thus predisposed to microservices by conway's law,1,0
+hgv3l4j,Reddit,2021-10-16 16:30:17,new managers came in and declared we're going to use microservices,-1,-1
+hgz1yki,Reddit,2021-10-17 13:32:53,microservices solving dependencies,1,0
+hguv6u0,Reddit,2021-10-16 15:16:35,too many microservice advocates think their architecture prevents intermixing of concerns,-1,0
+hh62ly0,Reddit,2021-10-19 01:17:31,true but by using microservices and containerizing them you can scale more efficiently.  there are a lot of benefits to microservices,1,0
+hgstq2o,Reddit,2021-10-16 01:31:18,microservices are essentially impossible to reason about by design,1,-1
+hgsw2ch,Reddit,2021-10-16 01:50:49,that's just what they turn out to be because no one is self critical enough to realise that microservices don't solve anything,-1,-1
+kchnv0u,Reddit,2023-12-08 12:57:48,guys what if all functions had network latencies? guy about to invent microservices,-1,0
+kccnrx1,Reddit,2023-12-07 11:58:46,microservices suck but nothing will sell me on a giant monolith.  giant monoliths are a whole level of suck to whatever you will deal in microservices,-1,-1
+kcd2xqe,Reddit,2023-12-07 14:35:10,there's only the bullet lodged in your skull after choosing microservices,-1,0
+kchyx9u,Reddit,2023-12-08 14:40:30,is the bot using microservices?,0,0
+kcjzf86,Reddit,2023-12-08 22:41:30,any synchronous communication between microservices is a recipe for disaster including datastore calls,-1,-1
+kcd6z1x,Reddit,2023-12-07 15:07:35,this is not a picture of a microservice architecture,0,0
+kcdm32v,Reddit,2023-12-07 16:53:23,you need good logging practices and distributed tracing to make large microservice deployments work if you dont have those things debugging is a nightmare,-1,-1
+kccmrpg,Reddit,2023-12-07 11:45:21,badly designed microservice architectures are worse.  the problem is that it's easier to fuck up with microservices and it's way harder to unfuck.  microservices have their place,-1,-1
+32324785,HackerNews,2022-08-02,you can most certainly have reliability and security problems while doing microservices. obviously i didn't claim you cannot have reliability or security problems while doing microservices,-1,0
+32272137,HackerNews,2022-07-29,microservices can most definitely be tightly coupled,-1,0
+32272020,HackerNews,2022-07-29,you mean a client server system? that is not microservices,0,0
+32271934,HackerNews,2022-07-29,microservices is just the latest silver bullet that inexperienced developers think will save themselves from doing bad work.  the reality is that microservices is inherently more complex than monoliths,-1,0
+32271878,HackerNews,2022-07-29,you can write bad code using both monoliths and microservices.  however microservices are inherently more complex and slower than monoliths because of the added encoding decoding and network overhead,-1,0
+32271847,HackerNews,2022-07-29,nothing stops microservices from having the same problems,-1,0
+32261447,HackerNews,2022-07-28,really? youve never seen an overengineered microservices design that could be a much simpler express app?,-1,-1
+32259135,HackerNews,2022-07-28,i dont know if you will need microservices or not.  i can tell you that many developers and teams will do microservices poorly and will not get an advantage out of it and will have an even more complex ball of mud to maintain,-1,-1
+32253049,HackerNews,2022-07-27,microservices suck when you need to make a process faster so you run a profiler and figure out that 90 of the workload is handling the http requests between the services,-1,-1
+32251412,HackerNews,2022-07-27,isn't the devil in the details? some problems are solved better as microservices,0,0
+32251220,HackerNews,2022-07-27,breaking up an app into microservices is total overkill in this instance,-1,0
+32251005,HackerNews,2022-07-27,aren't microservices nice because they allow you to have different teams own different parts of the code and minimize the communication overhead?,1,0
+10338171,HackerNews,2015-10-06,i see the strengths and weaknesses in the article and the complaints from all the comments here but i still find the trade off of microservices worth it.  the ease at which we handle that scale and the speed at which engineers get to iterate and deploy makes microservices all the more worth it,1,0
+10338414,HackerNews,2015-10-06,the main benefit of microservices is that each team can ideployi their service independently,1,0
+16202972,HackerNews,2018-01-22,i use microservices and i experienced many benefits,1,1
+17030691,HackerNews,2018-05-09,yes i've always seen microservices as an organizational win over any type of technical win. this whole team of one developer supporting 8 microservices seems ludicrious to me,1,1
+17028241,HackerNews,2018-05-09,aren't you comparing the historical reality of soa with the idealtheoretical implementation of microservices?i wasn't around in the soa era,0,0
+ewhjy6k,Reddit,2019-08-10 06:15:10,we switched to microservices but it was at huge cost to our company,-1,1
+ewhm8ps,Reddit,2019-08-10 06:53:17,our microservices include a postgres database a python api in lambdas data presentation layer ec2 with linux static file server s3 and there are third party services like cognito auth apigateway routing is this not a series of micro services? we are a small team,0,1
+ewh5k82,Reddit,2019-08-10 02:54:07,anyone who complains about microservices has clearly not been on a project where it was implemented correctly.  microservices are great,1,1
+ewgl643,Reddit,2019-08-09 22:59:00,microservices are just soa in cloud,0,0
+ewgpo6n,Reddit,2019-08-09 23:50:01,why do we need services so small that we call them microservice,-1,-1
+ewgjo86,Reddit,2019-08-09 22:42:51,as a general rule i think a microservice makes sense when the service is general enough to benefit many separate users.  the main benefit of a microservice is scalability which means you can run it on multiple servers if needed.  in other words it would seem to often make sense to make the whole application into a single microservice not divide it into several of them,1,0
+ewh2a4v,Reddit,2019-08-10 02:14:23,what exactly is a microservice or monolith?,0,0
+ewhz60u,Reddit,2019-08-10 11:46:06,they don't understand that when you only have a dev team of 10 and only work on abandonware during a project once every 20 years microservices hurt more than they help,-1,-1
+ewgm8ir,Reddit,2019-08-09 23:11:02,ultimately the problem that most people actually want to solve with microservices is about clear interface boundaries,0,0
+ewh229z,Reddit,2019-08-10 02:11:47,don't do it because of separation of concerns do it because your eng org is growing so big that the only way to push updates quickly is to break apart the code into smaller units of deployment microservices otherwise everyone will have a dependency on a single ops team which can't scale with the rest of the organization,0,0
+ewhheaz,Reddit,2019-08-10 05:35:39,i mean wtf were they thinking? if you refer to your engineering department as a team you are way way to small for microservices,-1,-1
+ewle6td,Reddit,2019-08-11 12:36:58,microservice architecture is not intrinsically better,0,0
+ewhx0u8,Reddit,2019-08-10 10:48:15,both microservice and monolith applications couldnwould use all the rest of the pieces you described.  microservices are the opposite of a monolithic application aka having all your application in one program,0,0
+ewi8ptm,Reddit,2019-08-10 15:08:58,my team of about 12 people own around 50 microservices.  any business functionality that is not related to core domain but uses our data is made a separate microservice,0,0
+ewh2yr9,Reddit,2019-08-10 02:22:26,eh netflix and google are the two companies i'd point to as important in the pioneering of microservices,0,0
+ewgllaj,Reddit,2019-08-09 23:03:42,anytime there is a discussion about microservices my first question is to define microservice,0,0
+ewi6j6x,Reddit,2019-08-10 14:32:30,i had a boss force me to do microservices as the sole developer of a project,-1,1
+ewh18fb,Reddit,2019-08-10 02:01:51,linux isn't a service of course there wouldn't be microservices.  microservices aren't about modularity.  note that this isn't microservice advocacy microservices are wrong for small teams but not because of the linux kernel,-1,0
+ewhfm00,Reddit,2019-08-10 05:09:33,however microservices are just a kind of module,0,0
+ewi448u,Reddit,2019-08-10 13:45:48,i've seen this go so far where teams actually think this is microservices.  i've actually seen people think a api oriented design to prepare for let's say a spa is microservices,0,0
+ewijixr,Reddit,2019-08-10 17:23:29,you could maybe say they are all services not microservices but aws is still one business unit,0,0
+ewh7rax,Reddit,2019-08-10 03:23:06,we develop in microservices we put for instance everything to do with user communications in one microservice well that's actually a class library mostly now anything to do with our software distribution system is in another microservice. 6 app can live in the same solution as our microservices so you can hit debug and go.  if something changes things in more than one microservice beyond the most trivial of change fail.  if it hits the mvc and a microservice too fail,0,1
+ewgllk7,Reddit,2019-08-09 23:03:47,you're hitting some of the benefits but that isnt why microservices started out as a useful thing,1,0
+ewgyj5a,Reddit,2019-08-10 01:30:16,multiple repos ! microservices.  you can have microservices in monorepo,0,0
+ewgyxll,Reddit,2019-08-10 01:34:59,you can have microservices in monorepo,0,0
+ewk49j8,Reddit,2019-08-11 00:31:45,but microservices don't magically scale better than monoliths given the same number of computes,-1,0
+ewp2zlv,Reddit,2019-08-12 19:52:19,that sounds like a microservices then,0,0
+ewgjk4s,Reddit,2019-08-09 22:41:37,monorepo doesn't imply monolith nor does it imply microservices.  famously google runs a monorepo and they do have microservices,0,0
+ewhw7dy,Reddit,2019-08-10 10:26:44,we are team of 4 maintainig a monolith 1 microservices,-1,0
+ewhsehf,Reddit,2019-08-10 08:54:34,this is you email microservice,0,0
+ewhr8qx,Reddit,2019-08-10 08:29:07,for example at the enterprise level we use microservices with kubernetes where different url paths map to different component services such as user authentication content management commenting multimedia specific digital products in nodevuejs etc,0,0
+ewhqd64,Reddit,2019-08-10 08:10:50,microservices are apis too only difference is that the api boundary is a network layer like http instead of a function call,0,0
+ewgh1bm,Reddit,2019-08-09 22:14:13,i get that some people are skeptical but if the goal of good software is highly decoupled and cohesive code that microservices are essentially born from that idea which is a good idea,1,0
+ewh56u6,Reddit,2019-08-10 02:49:20,the key distinction with a microservice design is that you don't speak in the same binary,0,0
+ewhe089,Reddit,2019-08-10 04:46:54,first we need to make sure computers are in the right group so we call the ad microservice to limit the computers to those in that user's scope of ous they can touch.  then we have to check and see if the remaining devices aren't in a lock down group for change control so our change control microservice is called to check if the devices are valid for the users chosen date.  there might be one or two more microservice calls after that but they're all abstracted into repository methods anyway so it's like calling a method,0,0
+ewj5msx,Reddit,2019-08-10 20:27:51,i saw other comments about how microservices help when release management becomes a pain point and 100 agree,0,1
+ewi7l8s,Reddit,2019-08-10 14:50:42,there are advantages of have microservices but this is not one of them.  if anything it is harder to deploy microservices,-1,0
+ewi2k5o,Reddit,2019-08-10 13:11:50,mostly because we're talking about microservices here and how to get there,0,0
+ewius5m,Reddit,2019-08-10 19:11:27,theres no effective difference from the perspective of being able to handle high load between scaling out a single monolith vs scaling out one or more microservices,0,0

@@ -1,0 +1,9 @@
+
+Sentiment Analysis Summary for the files in ./Labelled_Discussions/ChatGPT/: 
+ ['Labelled_Discussions\\ChatGPT\\chatGPTPredicted.csv']
+------------------------------
+Total Entries: 97
+Positive Sentiments: 44 (45.36%)
+Negative Sentiments: 10 (10.31%)
+Neutral Sentiments:  43 (44.33%)
+------------------------------

@@ -1,0 +1,9 @@
+
+Sentiment Analysis Summary for the files in ./Labelled_Discussions/EASTER/Improved/Shorter/: 
+ ['Labelled_Discussions\\EASTER\\Improved\\Shorter\\manual_vs_easter_on_shorter_data.csv']
+------------------------------
+Total Entries: 36
+Positive Sentiments: 8 (22.22%)
+Negative Sentiments: 18 (50.00%)
+Neutral Sentiments:  10 (27.78%)
+------------------------------

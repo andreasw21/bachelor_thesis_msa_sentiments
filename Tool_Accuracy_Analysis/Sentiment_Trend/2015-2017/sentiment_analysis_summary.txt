@@ -1,0 +1,9 @@
+
+Sentiment Analysis Summary for the files in ./Sentiment_Trend: 
+ ['Sentiment_Trend\\2015-2017_less_than_50_words.csv']
+------------------------------
+Total Entries: 150
+Positive Sentiments: 10 (6.67%)
+Negative Sentiments: 25 (16.67%)
+Neutral Sentiments:  115 (76.67%)
+------------------------------

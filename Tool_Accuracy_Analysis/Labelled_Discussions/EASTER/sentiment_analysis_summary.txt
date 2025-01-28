@@ -1,0 +1,9 @@
+
+Sentiment Analysis Summary for the files in ./Labelled_Discussions/EASTER/: 
+ ['Labelled_Discussions\\EASTER\\EASTER_predicted.csv']
+------------------------------
+Total Entries: 97
+Positive Sentiments: 3 (3.09%)
+Negative Sentiments: 28 (28.87%)
+Neutral Sentiments:  66 (68.04%)
+------------------------------

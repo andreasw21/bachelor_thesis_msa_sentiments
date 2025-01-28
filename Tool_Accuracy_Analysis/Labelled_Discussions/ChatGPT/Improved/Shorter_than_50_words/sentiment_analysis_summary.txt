@@ -1,0 +1,9 @@
+
+Sentiment Analysis Summary for the files in ./Labelled_Discussions/ChatGPT/Improved/Shorter_than_50_words: 
+ ['Labelled_Discussions\\ChatGPT\\Improved\\Shorter_than_50_words\\chatgpt_predictions.csv']
+------------------------------
+Total Entries: 44
+Positive Sentiments: 5 (11.36%)
+Negative Sentiments: 5 (11.36%)
+Neutral Sentiments:  34 (77.27%)
+------------------------------

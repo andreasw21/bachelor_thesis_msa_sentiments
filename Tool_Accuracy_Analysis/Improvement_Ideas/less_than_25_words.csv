@@ -1,0 +1,17 @@
+ID;Source;Creation Date;Content;Sentiment
+23449910;HackerNews;2020-06-07;at a goto talk an uber engineer said they had so many microservices it was impossible to really count how many they had;-1;-1
+38082191;HackerNews;2023-10-31;maybe logging should be a microservice....;0;0
+38077876;HackerNews;2023-10-31;in the department i work there's a lot of microservices about 56 so 56 teams. but everything is quarkusspring java and nothing else.;0;0
+38075700;HackerNews;2023-10-30;really doesn't make sense to me that people jump to microservices rather than creating module boundaries in their monolith.;-1;-1
+38076765;HackerNews;2023-10-30;ymmv but i think you can only do that if you have a monorepo with the shared library and all the microservices;0;0
+38074617;HackerNews;2023-10-30;microservices not being able to talk to each other the network basically never comes up.what you are saying is outright ridiculous.;-1;-1
+38072897;HackerNews;2023-10-30;can you point to a comment on hn saying microservices are never justified?;0;0
+38073768;HackerNews;2023-10-30;open source projects rarely involve live services or providing saas. in those situations i think microservices are much more helpful;1;1
+38071736;HackerNews;2023-10-30;microservices is a newer term than soa.;0;0
+hguv6u0;Reddit;2021-10-16 15:16:35;that was my point. too many microservice advocates think their architecture prevents intermixing of concerns.;-1;-1
+hh62ly0;Reddit;2021-10-19 01:17:31;true but by using microservices and containerizing them you can scale more efficiently. there are a lot of benefits to microservices.;1;1
+kchnv0u;Reddit;2023-12-08 12:57:48;guys what if all functions had network latencies? guy about to invent microservices;-1;-1
+kcd2xqe;Reddit;2023-12-07 14:35:10;there's only the bullet lodged in your skull after choosing microservices.;-1;-1
+kchyx9u;Reddit;2023-12-08 14:40:30;is the bot using microservices?;0;0
+kcd6z1x;Reddit;2023-12-07 15:07:35;we still do. this is not a picture of a microservice architecture.;0;0
+kcdm32v;Reddit;2023-12-07 16:53:23;you need good logging practices and distributed tracing to make large microservice deployments work if you dont have those things debugging is a nightmare;-1;-1

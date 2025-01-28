@@ -1,0 +1,9 @@
+
+Sentiment Analysis Summary for the files in ./Labelled_Discussions/Senti4SD/Improved/Microservice_related: 
+ ['Labelled_Discussions\\Senti4SD\\Improved\\Microservice_related\\senti4SD_predictions.csv']
+------------------------------
+Total Entries: 97
+Positive Sentiments: 13 (13.40%)
+Negative Sentiments: 23 (23.71%)
+Neutral Sentiments:  61 (62.89%)
+------------------------------

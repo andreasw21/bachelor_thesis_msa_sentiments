@@ -1,0 +1,9 @@
+
+Sentiment Analysis Summary for the files in ./Labelled_Discussions/ChatGPT/Improved/Different_prompts: 
+ ['Labelled_Discussions\\ChatGPT\\Improved\\Different_prompts\\100_short_comments.csv']
+------------------------------
+Total Entries: 99
+Positive Sentiments: 11 (11.11%)
+Negative Sentiments: 9 (9.09%)
+Neutral Sentiments:  79 (79.80%)
+------------------------------

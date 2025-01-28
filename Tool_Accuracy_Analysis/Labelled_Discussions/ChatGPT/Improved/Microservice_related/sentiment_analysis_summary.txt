@@ -1,0 +1,9 @@
+
+Sentiment Analysis Summary for the files in ./Labelled_Discussions/ChatGPT/Improved/Microservice_related: 
+ ['Labelled_Discussions\\ChatGPT\\Improved\\Microservice_related\\chatgpt_predictions_msa.csv']
+------------------------------
+Total Entries: 97
+Positive Sentiments: 56 (57.73%)
+Negative Sentiments: 20 (20.62%)
+Neutral Sentiments:  21 (21.65%)
+------------------------------

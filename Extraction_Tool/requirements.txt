@@ -1,0 +1,4 @@
+requests
+praw # Note: for python 3.12 this works fine, but for older versions like python 3.8 this might cause issues
+numpy
+scikit-learn # only needed to run the calculate metrics scripts. For just post extraction its not needed

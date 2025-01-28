@@ -1,0 +1,9 @@
+
+Sentiment Analysis Summary for the files in ./Labelled_Discussions/Senti4SD/Improved/Shorter_than_50_words: 
+ ['Labelled_Discussions\\Senti4SD\\Improved\\Shorter_than_50_words\\senti4SD_predictions.csv']
+------------------------------
+Total Entries: 44
+Positive Sentiments: 4 (9.09%)
+Negative Sentiments: 12 (27.27%)
+Neutral Sentiments:  28 (63.64%)
+------------------------------

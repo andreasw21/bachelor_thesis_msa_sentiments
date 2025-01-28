@@ -1,0 +1,9 @@
+
+Sentiment Analysis Summary for the files in ./Sentiment_Trend/2024: 
+ ['Sentiment_Trend\\2024\\2024_less_than_50_words.csv']
+------------------------------
+Total Entries: 161
+Positive Sentiments: 11 (6.83%)
+Negative Sentiments: 41 (25.47%)
+Neutral Sentiments:  109 (67.70%)
+------------------------------

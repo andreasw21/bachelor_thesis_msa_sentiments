@@ -1,0 +1,9 @@
+
+Sentiment Analysis Summary for the files in ./Labelled_Discussions/Senti4SD/Improved/After_ChatGPT_Shortening: 
+ ['Labelled_Discussions\\Senti4SD\\Improved\\After_ChatGPT_Shortening\\senti4SD_predictions.csv']
+------------------------------
+Total Entries: 96
+Positive Sentiments: 5 (5.21%)
+Negative Sentiments: 50 (52.08%)
+Neutral Sentiments:  41 (42.71%)
+------------------------------

@@ -1,0 +1,414 @@
+ID;Source;Creation Date;Content;Sentiment
+yz4gc0;Reddit;2022-11-19;Title:Microservices: it's because of the way our backend works, Content: https://www.youtube.com/watch?v=y8OnoxKotPQ;0
+
+iwy93bs;Reddit;2022-11-19 08:13:29;"I must be getting old because I still haven't figured out why I should be creating microservices, even in a large environment full of millions of lines of code. Divide by honest-to-god servers, with perhaps some neat-o strict API layers inside them to keep things modular. I write servers used by millions of people and microservices are nonexistent in our architecture and I've never once wished we had even one.
+
+That said, I'm officially ""old"" by software engineering standards, which I guess means anyone over thirty, and I'm willing to be proven wrong by someone with a badass use case that really makes microservices shine.
+
+(Also, that's my favorite programming-related video of all time. KRAZAM is S-tier)  
+
+
+EDIT: Thanks everyone for genuinely interesting/helpful responses! Jury's still out for me, but part of good engineering is entertaining many different possible solutions.";0
+iwz3ik1;Reddit;2022-11-19 14:56:20;"context - I'm a senior software engineer with both monoliths and microservices experience.
+
+Oh boy - some comments here are so wrong that they manged to get me out of lurking ([https://xkcd.com/386/](https://xkcd.com/386/))
+
+Both microservices and monoliths are a design choice. If you don't know why to choose a monolith vs a microservice then you shouldn't make that choice :).
+
+Microservices were born not because of somebody deciding they needed more complexity but because of the pattern that emerged with monoliths. As we all know our software cannot scale forever vertically *feature-wise* \- which means that if you're going to grow you're going to need to confine some features to a specialized group of servers (fleet). Next step was - hey I know I'm going to need to scale this beyond 1 server per featureset - let's design this as a separate service. Congratulations - you have your first microservice.
+
+I've seen folks here argue about monoliths with some features enabled per deploy - I hate to bring that to you - but those are effectively microservices. Next you're going to complain that you need to deploy too often when other components change :)
+
+Monoliths are fine when the scale is small to medium-size. But don't expect to grow to twitter scale with that architecture. Microservices are useful for small scale only when you want to use a separate technology for something.
+
+tl;dr Monoliths are fine. Microservices are fine. Choose wisely *when* to use them.";0
+iwy42i9;Reddit;2022-11-19 07:08:51;"I wonder how much these convoluted microservice architectures are a consequence of the easy capital environment of the last 10 years. My observation is that fine-grained service architectures favor ""grow at any cost"" business models with high capex, headcounts and turnover. Huge VC backed firms set the trends and smaller businesses followed. A tighter capital environment should change the economics of development to prefer higher efficiency over lower coupling.";0
+iwynuwk;Reddit;2022-11-19 11:50:13;"Only one question is needed when people try to tell you about their microservice architecture: what happen when one of those services dies?
+
+Also, gotta love when most of those services depend on the same database server.";0
+iwz38m0;Reddit;2022-11-19 14:53:47;"this is so great
+
+im on the camp of microservices, ok if you need it. otherwise its too complex. monoliths work fine. and you can still split monoliths on concerns if they arnt overly complex in coms
+
+relianing on a microservice to execute say a payment in a real time fincial transaction system shouldnt need to talk to 3 things. a monolith can scale this, sql server becomes your first bottleneck, mongo db really helped us with this. its a change in mindset in how you store data, joins are a no no, but you can modify the doc so that it has enough information of what the join would have contained. extra space is the downside, the upside is no locking across tables to pull data from various tables";0
+iwyqlhp;Reddit;2022-11-19 12:29:32;"It’s as good as this javascript one: https://m.youtube.com/watch?v=Uo3cL4nrGOk
+
+It would be awesome if that guy did one on microservices.";0
+ix0v1eu;Reddit;2022-11-19 22:46:01;oh by the way, there shouldn't be any microservice named Galactus [because it's an anti-pattern](https://en.wikipedia.org/wiki/God_object);0
+iwyeisr;Reddit;2022-11-19 09:30:33;I think they had a microservice for 2-factor auth? Seems too micro to me.;0
+iwymr80;Reddit;2022-11-19 11:33:38;"Having worked on bad monoliths, good monoliths, fat services and microservices, my considered opinion is that the main reason is Conway's Law: the organisation creates systems which reflect the structure of the organisation. I.e. how do you get 100 developers split into 20 development teams to work together on the same system? Answer: you split it into 20 services. 
+
+The secondary reason is specific to tech megacorps: when you're Netflix, very specific parts of your architecture need to be scaled at different times to meet different loads, e.g. it's 6pm in US East, so 50m people are logging in to look for something to watch, better scale your login services in US East. Doing that with a monolith is doable but wasteful as you need to deploy the whole thing multiple times. And wasteful at Netflix scale doesn't mean an extra $20 p.a. on hosting over-sized instances, it means an extra $20m or even an extra $200m.
+
+If you aren't working at MANGA and you don't have many teams working on many systems, you have no business doing microservices. I know of one start-up I worked with recently who ultimately went bust and one of the contributing factors was they reached straight for microservices when they had a tiny engineering team. They couldn't cope with the additional complexity of the architecture and couldn't resolve the problems they faced.";0
+iwyg6gw;Reddit;2022-11-19 09:54:40;"We have several pretty clear boundaries in our systems.  
+In the old days of shipping the code for the customer to run themselves on dedicated hardware, we had three main teams all handing their own monolith that did a specific part of it. Integration to third parties, processing, and user interaction.  
+Now those teams are split into sub-concerns, each creating 1-3 microservices to deal with their concerns. It makes sense in our case.  
+  
+And my favourite part of a microservice architecture is probably the upgrade process.  
+We have no downtime for upgrades, and can push updates to a single seevice by just scaling up the instance count of the old version and adding in a single node with the new version. Then we observe the new version for a while to ensure it works well with maybe a tenth of the traffic.  
+If everything is green, add in more nodes of the new version and start to tear down the old one.";0
+iwym9lo;Reddit;2022-11-19 11:26:04;"I have been developing probably as long as you and have built software that also handled millions of users, going back as far in the day as when Perl and CGI were a thing.
+
+I still maintain older environments but also new ones, and I think one of the big advantages of microservices is that you can take advantage of price/performance improvements more granularly.  One example I can think of is with S3.  File storage costs in the cloud have dropped so dramatically over the years, and one environment had things like user uploading of images and media in it's own service.  We were able to lift that to the cloud and save a bunch of money and increase performance with less risk.
+
+In the monolith approach you have to really work hard to make sure you don't break other things.  It makes it less likely it's cost or risk effective to do the analysis and testing required to make certain changes. But if the environment had been designed from the beginning that media uploading was it's own service, you know nothing in your core is going to break if it's changed as long as the API remains the same.
+
+You can also more easily do things like rolling out an updated service to 5% of your userbase with extra monitoring and benchmarking, because you only are slowing down 5% of one service versus adding bloat into one application.";0
+iwyly6y;Reddit;2022-11-19 11:21:25;The GOTO Conferences youtube channel has recently released a 3-video series on microservices and distributed systems, when they are useful, when they are not, by Martin Fowler, that pretty much answers all these questions;0
+iwyk552;Reddit;2022-11-19 10:54:06;Absolutely right -- encapsulation is the thing. Break an API contract and you'll cause problems in a monolithic architecture or working with microservices. 🤷‍♀️  I'd say there's some benefit to scaling some components independently but sort of splitting hairs.  Anyway ... love this video.  Perennial classic :);0
+iwyavng;Reddit;2022-11-19 08:38:24;"Mostly better for resiliency and fault isolation, scalability, more granular observability and easier/faster issue detection. 
+
+Being able to do things like isolate/separate specific functions (or even duplicate microservices pools) for different clients so that revenue impacting/customer facing client pool A isn’t mixed with calls from super high traffic but lesser importance batch pool B. 
+
+In a nut shell, you aren’t hitting 4 9’s availability with monoliths in any kind of large scale application.";0
+iwyqtd2;Reddit;2022-11-19 12:32:33;"Microservices are not an engineering problem, it's a business problem. Well thought out business architecture is a great template for microservice architecture.
+
+Just because consultants push for it and businesses with monolithic business architecture try to force a block through a circular hole doesn't mean microservices are bad. And sometimes the criticism towards microservices is because people are forced to use them when they should not.
+
+And don't use microservice patterns if you feel uncomfortable. But if you can and business enables it, then microservice architecture really is great and I'd not build business flow automation any other way.";0
+iwytvn5;Reddit;2022-11-19 13:13:06;"As many things in software development, the theory behind microservices is architecturally sound, but the way many people understand and implement it is fundamentally flawed.  No, microservices does not mean adding as much network latency as possible.  It does not mean having as much deployables as possible.  It's just old fashioned incapsulation repackaged.  And yes, sometimes it's good to run in a different process or have a different release cycle.  But that is not what microservices is about.
+
+This kind of shit is just overengineering in general.  It's offering solutions without thinking what the problem is (or if there's even a problem).";0
+iwz4twu;Reddit;2022-11-19 15:08:29;"> old? 
+
+jeez im nearly 40
+
+i guess i share alot of your skeptisims of microservices. if a monolith does the job do it, KISS all the way. only do microservices if its needed and it needs to be a good one.";0
+iwz7xmu;Reddit;2022-11-19 15:35:35;"Iteration speed. The bigger the system, the less likely it is you can deploy new features every day or even every week: you need to integrate the changes, build the release, run the whole suite of tests and then find a service window to deploy.
+
+None of these challenges are insurmountable in a monolith. But some of the challenges can't be solved by the engineers alone in a monolith: 
+
+- you can't deploy the changes to the credit scoring model without manual UAT because you fucked up the rollout last year and the CIO agreed to UAT for these features
+- the dude who is authorized to sign off the UAT is on vacation
+- your *other* critical feature in this release is based on the new credit scoring model code, you can't just backport it
+
+Breaking the system into microservices introduces a lot of technical complexity but removes organizational complexity.
+
+- how do I reconcile or prioritize features from multiple owners? Your backlog has a single owner
+- how do I avoid manual UAT? Make rollouts and rollbacks quick and painless
+- how do I avoid breaking other people's code? API. If you make a breaking change, you have to support the old API version for N months";0
+iwzodta;Reddit;2022-11-19 17:41:40;"Microservices are really just repeating standard good practices at the infrastructure level. The same reason you don't want a God class you don't want a monolith.
+
+I think a lot of people who have or haven't worked with microservices simply haven't had to own them for any significant length of time. To realize the benefits one had to experience how software evolves over time.";0
+iwztup6;Reddit;2022-11-19 18:21:04;"Others have already chimed in, but for us we've enjoyed them the past few years for separation of concerns, independent deployments, and smaller chunks of code that are easier to manage and less likely to have to deal with merge conflicts.
+
+The biggest is just the deployments. Being able to deploy one service without taking down the whole app has been very helpful to making our teams not collide and qa not to be blocked because another team had a critical fix to deploy.
+
+That said, I would say our microservices are less micro and more just services, we only have about 15 of them for our platform to run. I don't know exactly how micro they need to be, but for us we've found a pretty good balance of the benefits above against the additional work to maintain several separate services.";0
+iwzqu3g;Reddit;2022-11-19 17:59:20;"A benefit I haven’t seen mentioned is that micro service architectures moves a lot of the boilerplate code to pipe operations together out to the cloud provider/infrastructure.
+
+This allows much faster dev time on new features with far less resources. The monolith way you have to spend months of new dev time wading through the whole pile of shit that is the monolith most of which is pointless boilerplate that connects stuff together (in special ad hoc sort of ways I might add)
+
+In comparison in a microservice architecture new feature can be as small as one dev just standing up a single lambda/azure function and then it gets plumbed into the application using well known ifrastucture as code tools marshaling standard connectivity that is maintained by the cloud provider.
+
+Micro services tend to have far less useless boiler plate. That said obviously it trades much of the complexity that used to be hidden in the boilerplate for marshaling complexity. I think it’s a winning trade though as the real bottlenecks in development is actually the code that does the work. If you can build code that does work you can always figure out a way to glue it all together after the fact";0
+iwy9922;Reddit;2022-11-19 08:15:41;Exactly, don't use microservices. I use monoliths, all day, every day. If I want to change something, I'm gonna just...change it, not go through eight rounds of bullshit like in the video.;0
+ix0l2k1;Reddit;2022-11-19 21:33:56;"The microservice idea is great if you have a self contained query.  A box that takes in y and spits out x based on a formula.  If it's simple enough that box can use a cache to be faster and support multiple servers while just being itself.  It can also be switched out on its own if the formula changes.  How about having 100 game servers that pummel the database?  Instead have a microservice that connects to the dB and pulls the users table for everyone. 
+
+The problem is how people do them microservices needs microservices and the formulas for most of this stuff has been made to simplistic that there's no reason for them.
+
+Also microservice are a good idea for laege distributed cloud machines but very few people work on scale that big.  If you have a single server or a single location you can probably ignore that efficiency and just make a server that works.";0
+ix06ley;Reddit;2022-11-19 19:50:52;"In my experience, microservices are harder to develop and maintain than just adding onto a monolith. There are times when I do think a microservice makes sense, but my experience has taught me microservices should not be the default, and should only be used if there is really good reason for a new one. 
+I start with monolith as the default, and will entertain microservices if the value outweighs the additional costs.";0
+ix03zzc;Reddit;2022-11-19 19:32:24;It's not just about scale either btw, the design will have a bearing on the speed/latency of the system. It's going to be faster to call procedures inside the same monolith than a separate microservice.;0
+iwz03v9;Reddit;2022-11-19 14:23:11;Typically you'd want each microservice to have it's own database.;0
+iwzfb0h;Reddit;2022-11-19 16:34:26;"The thing is, it makes sense at Amazon because they wanted these services to be useful to other, external people, and thus microservices are a revenue stream.
+
+99% of everyone else who copied what AWS does are doing Cargo Cult Programming. ""If AWS did it, it must be good -- it doesn't matter why, *we need to copy AWS goddammit!*""
+
+Microservices are almost always the wrong answer to a monolithic service.";0
+iwzg3tu;Reddit;2022-11-19 16:40:27;It's like the perfect thing to be a microservice.;0
+iwz7f8x;Reddit;2022-11-19 15:31:14;You think each individual microservice should define a separate way for users to do 2FA?;0
+iwzkjxu;Reddit;2022-11-19 17:13:21;"I would not be surprised to find a microservice for the echo protocol.
+
+... and I am not surprised.  Java, Gradle, Helm.  https://github.com/demo4echo/echobe
+
+It's the IsOdd() from npm writ silly.";0
+iwz647v;Reddit;2022-11-19 15:19:58;"I worked on a Monolith for 6 years. Now I work at a massive (not MANGA tho) tech company doing microservices.
+
+One of my interview questions was if I could, would I make my old codebase microservice based? I gave a definitive ""no"". I guess they agreed with my reasoning because they still hired me haha.";0
+ix1myda;Reddit;2022-11-20 02:24:21;"Ah, gotcha. Yeah, we break things down into manageable teams, and the software architecture definitely reflects that. Maybe it's all microservices standing on each other's shoulders in a trenchcoat :)
+
+Thanks for taking the time to respond in depth.";0
+iwyuivl;Reddit;2022-11-19 13:21:14;"This is it exactly. We had a monolith and one team. Great. Add another team. Still works ok. Another team? All hell breaks loose.  The communication and synchronization requirements between teams seems like it's an exponential growth kind of thing. We're at six teams now, so not huge by any stretch, but not enough to constantly step on toes of we're in a monolith.
+
+Compare that with microservices, and each team owns their own codebase. The codebases are smaller, not to mention, each codebase is split (as much as possible) along conceptual domain lines, so if we are onboarding someone, we can share our focus much easier. ""The microservice we work on does X"" instead of <insert all the things our company does>.
+
+That all said, don't start with microservices unless you're starting with a large team, well-defined, separable domains, and lots of money.";0
+iwznxno;Reddit;2022-11-19 17:38:29;Yeah, that's definitely never been why microservices are a thing. It's just a by-product.;0
+ix5ml91;Reddit;2022-11-20 23:48:11;"monolith that needs to send emails
+
+batch service that needs to send emails
+
+&#x200B;
+
+create an email service that scales separately to the monolith.. boom you have a microservice - nothing to do with teams";0
+iwyeydv;Reddit;2022-11-19 09:36:48;"Yes, but we can already do that with, say, different DLLs, or the Facade pattern, or principled in-executable APIs, or just modular design that everyone follows.
+
+Even if we split things into, say, multiple git repos, we can still have carefully-orchestrated tight coupling where needed (for, say, shared utility libraries, inlined code, or ultra-low latency API calls). I guess it comes down to what people call a microservice; to me simply having an internal API and completely separated code (i.e. the client of an API and the API provider do not share any code) doesn't make for a microservice, but I suppose according to some people that could still be considered one.
+
+That said, maybe there's something I've never hit. I'm used to big, old software developed by dozens of people, and never once felt it needed to be decomposed, because everyone respected the modularity that was present and was cooperative where there were conflicts.";0
+iwz0k9o;Reddit;2022-11-19 14:27:49;Over 50 checking in.  Learning microservice development after many years of SQL development.;0
+ix1o38v;Reddit;2022-11-20 02:33:35;"Interesting take. I'm still upset about the problems of distributed debugging--try debugging uncommented Fortran 77 code on a hundred different Windows 2000 machines--but maybe if there are enough tests it's fine.
+
+I had a \_huge\_ problem with something that is probably technically a microservice at work (despite having like, internal APIs with more functions than Win32) and it was about impossible to debug because HTTP/2 adds so much stuff. Turns out major Rust libraries aren't as great as they claim, but if we had a single codebase in a single language that didn't require Wireshark to debug, we'd have found the problem instantly.
+
+But yeah, makes sense in certain business contexts, though maybe I'm overthinking it and it's just ""decompose your servers when it makes sense, and keep the external APIs simple"", which is what I tend to do even in monolithic applications, because nothing else scales to hundreds of thousands of lines of code.";0
+ix1mrir;Reddit;2022-11-20 02:22:48;"Yeah, I use Open Service Mesh at my current job. It's a double-edged sword, as I don't have to deal with HTTPS directly (thank god!) and all the keys, etc with it. Or service discovery, etc.
+
+However, it adds complexity and we're theoretically a low-latency service (people care about 30-50 ms latency increases for whatever reason) and OSM means we can't use fancy things like gRPC over QUIC (don't ask why we're using gRPC, every time I've tried to turn to something that fits our communications pattern I was shut down by management because That Is How We Do Things).
+
+I'm suspicious of this sort of complicated stuff getting in the way of a performant server, but if performance isn't the gating factor for the product, or the deployment scenarios aren't known during dev time or understood by the devs, or changing configuration after the fact or for different scenarios is important, then I can see this. Likewise I enjoy Amazon Lambda and Azure Functions for things that really should be their own function because they are so cheap and easily contained!
+
+I don't do business logic or whatever, everything I work on is a giant mess of huge data structures and fancy math, so I rarely have to deal with a problem that's so seperable.
+
+That said, my biggest problem is that with a monolith I don't have to set up a fancy test environment with Kubernetes doing weird stuff I don't know about in the background. I know what the behavior is going to be (more-or-less) because it's baked into my codebase, not some Cool Fancy Cloud thing. But maybe, like you said, Cool Fancy Cloud Thing will let the people using what I write do more Cool Fancy Stuff that delights our customers?
+
+Also, the more I talk to y'all who are knowledgeable about this, the more I'm convinced that what I work on is, more-or-less, a microservice, despite being internally very complicated. It's a thin, highly-concurrent interface to an ML model that adapts a simple network protocol to the needs of the model and handles workload generation, multiplexing and demultiplexing, etc. From the outside the only two operations are ""here's some data to shove in the model"" and ""ping"", but the interface for the former isn't exactly tiny even if it \_is\_ single purpose. And we need to run on fancy expensive GPU servers and will peg the GPU at max usage and nearly max memory--it's something like a third of a million dollars per year to run a \_single\_ instance of our software because these models are so computationally expensive. So it feels weird to call it a microservice, but maybe that's exactly what it is.
+
+Thanks for shedding some light on this! You deserve more upvotes!";0
+iwybjyp;Reddit;2022-11-19 08:48:10;In my experience it's not so much about scaling on the user side as it is about scaling on the development side. Working on a monolithic code base starts to become pretty unmanageable with hundreds or thousands of developers, and nightmarish when you get to the kind of developer workforce that places like Google and Facebook have. One developer can easily fuck up an entire workday or even work week for thousands of others, and while technically that might be possible to avoid if everyone always knew exactly who it was and exactly what they did, that kind of omniscient knowledge transfer and communication in an organization is itself an incredibly difficult task. And the challenge of keeping everyone up to date on changes and documentation is likewise nearly impossible. Microservices is one way of partitioning away a lot of that risk and allowing developers of less critical systems to have less responsibility and lowering some of the change control burden. It still requires proper management and architecture though, and it's easy to fuck that part up and then heap all the blame on microservices. Like most things in software development it's not a panacea or a silver bullet, it's just a tool that you can try to use when there's a need.;0
+iwy9xrb;Reddit;2022-11-19 08:25:05;"I'm not against microservices as a valuable tool in someone's toolbox. I just... can't imagine taking it out of the box.
+
+Who has the kind of problem that needs that tool? Can someone please please explain to a high-performance backend maniac what we need metric buttloads of RPCs or expensive network transactions to accomplish that we can't do with a smaller number of carefully decomposed monolithic servers? Say something on the order of \~5-20 contributors each or the like?";0
+iwynmt3;Reddit;2022-11-19 11:46:50;"Right! People forget all these are just tools! You use them if appropriate. People often get infatuated with the latest and greatest, or become paradigm zealots, we have now these reactive, functional, microservices, nosql, this language, that language, library 1, library 101 etc. And everyone forgets the bottom line - just do what you need, no more, no less, don't complicate your life. There are no ""silver-bullets"", only tradeoffs. 
+
+I hate my job, because of colleagues that don't realize this, and try to pull everyone else into their new-and-shiny BS, wearing everyone down.";0
+iwyficq;Reddit;2022-11-19 09:44:52;"The team I worked on for \~8 years was disciplined and no one added so much as a single module without oversight. It was a huge project and started in the mid-nineties, but it's still kicking around today and is used by tens of millions of people.
+
+Adding new features wasn't fun, but the internal modularity was never the issue. This software has over a thousand integration tests based on developer input, researcher input, and real-world deployment scenarios, as well as a ton of diagnostic code only run on internal builds. If we didn't have all of that, it'd probably be a giant mess, but we do and while it's slow to adapt it works well and the releases have very few bugs reported from dowstream customers for something in such an unsafe language (C++) with most of a million lines of code.
+
+It's possible that this is an aberration, and perhaps I shouldn't generalize my experience. We work in a very math-intensive field that's focused around data structures, math, and AI, etc, it might be an ineffective strategy for something that's mostly business logic, as with your example above. I don't have much experience with business logic as it's not really my thing, so maybe I'm missing out on how microservices help there.";0
+ix13myk;Reddit;2022-11-19 23:51:14;"The limit, as the commenter above pointed out, is more in *feature* growth scaling constraints than traffic growth.
+
+If your tech stack only does a few specific things you can scale a monolith damn near indefinitely to serve as much traffic as you want.
+
+Where it gets complicated is if your company starts adding new divisions that do something completely different, with completely different traffic patterns and resource constraints. At a certain point, too many different competing concerns and use cases will introduce scaling constraints -- not on the service itself, but on the effectiveness of how your teams can develop in it.
+
+If you've got 20 disparate divisions all trying to run in the same monolith, and they have varying requirements on scaling and resource utilization, you're probably going to start deploying separate instances of your monolith for the different divisions to prevent resource contention between their usage. You'll need to design your infra to either deploy those monoliths with different features enabled or disabled, or figure out ways to make the code behave properly for each divisions needs. Now you're paying the overhead for longer build times, more complex deployment, and more development friction on a codebase while your deployed instances all have a bunch of APIs that aren't in use because that particular shard is for division Y that doesn't need Z API like division X does.
+
+Well then why not just split out the code for division X and Y into separate codebases and deploy those services separately to simplify your process? And now you've arrived at microservices.
+
+That's really the thing when people talk about scale with micro services. It's not about scale of traffic. It's about scale of the company's organization.";0
+iwz9hfg;Reddit;2022-11-19 15:48:32;If two microservices share a database they should probably be one microservice. Split microservices by bounded context / problem domain, if you have one db you chose the wrong system boundary.;0
+iwz9qqn;Reddit;2022-11-19 15:50:41;Microservices can be tied to their own database perhaps for managing internal/local state, but it seems impractical for each microservice to replicate large datasets with billions of rows?;0
+iwzpr92;Reddit;2022-11-19 17:51:33;"Borderline impossible to design an architecture that can segregate data like that. All the microservices need to share some data, which means duplication or some other coupling nonsense. Which is really why its super hard to design something like that. 
+
+A situation where a microservice can be completely isolated is extremely rare";0
+iwyzhd6;Reddit;2022-11-19 14:16:48;"I've heard from other companies like Ericsson they they actually have a ""Microservice Naming Board"" lol";0
+ix00ngs;Reddit;2022-11-19 19:09:04;It mostly depends on your company size and whether your products are interconnected. Microservices weren't really convenient possible without the advent of containers and virtualization. Both types of ecosystems are evolving right now. 10 years ago, it was mostly microservices as startups are smaller companies and larger companies were mostly stuck in legacy technologies. The larger companies have been changing that for the past 10 years. Now we are seeing the results of that effort from big companies.;0
+ix0zhep;Reddit;2022-11-19 23:19:26;Has this event spawned chats at everyone else's work about monolith vs microservices?  It's actually created some important discussions with mine.;0
+iwz9wj0;Reddit;2022-11-19 15:51:59;One question I always ask when I’m interviewing people is what they think of microservices. Experienced people can and will mention both upsides and downsides, sometimes extremely specific downsides, and junior people will just say something like “it’s nice and there are no downsides”. Oh, my sweet summer child.;0
+ix0su09;Reddit;2022-11-19 22:29:49;"I have worked with a monolith with hundred of developers and the development process worked relatively well. The real issues where caused by supporting numerous version in parallel and merging together later.
+
+We had ""architects"" that where responsible for both the logical architecture and the functionalities of various parts of the monolith. Their responsibilities where split by functional domains.
+
+Later the company was bought and the new owner wanted to us to work their way, with a lot of independents teams and to split the software into smaller units (I would not call them microservices). The ""architects"" responsibilities where changed and the lost the role of overlord above the software.
+
+The quality slowly decreased overtime, there was conflict, bugs, part of the applications that conflicted between themselves. This was caused by the team not communicating between them and not being aware of what the others were doing. Sometime part of a functionality were even forgotten because the teams A thought that it was done by team B and team B by team A and there was no one to have a high level view.
+
+I'm not really sure that microservices solve anything by themselves. To be successful with a complex software the communication and company culture is a lot more important than the architectures or the developments processes.";0
+iwz78pf;Reddit;2022-11-19 15:29:40;"Glad it works for you guys, seriously. If you can find work life balance with that setup it’s great. No approach is best in all situations. With thousands of developers, monoliths became an issue for us a long time ago and we started splitting into a really early version of “microservices” about 18-19 years ago, just generally splitting up the unified builds into different groups based on functionality. Team A causing a memory leak that brought down services for Team B was an all too common problem and people got sick of it. Build cycles and site deployments were every two weeks (now we have teams rolling out daily or as often as they need). Restarting servers daily or every couple days was the norm to keep things healthy. I wouldn’t go back. 
+
+Depends on how you’re measuring availability too I guess, and what management wants to include in the measurement, haha.";0
+iwynjzk;Reddit;2022-11-19 11:45:43;Aren't you just describing microservices that have a bunch of superfluous code deployed on them?;0
+iwyxd8o;Reddit;2022-11-19 13:54:07;"> This is a fantastic answer, thank you so much!
+> 
+> 
+
+Too bad literally nothing he said is true :D
+
+He's just repeating talking points from ""evangelists"". Some of the points he made are absolutely backwards. Microservices are absolutely terrible for issue detection and debugging. It's a nightmare.";0
+iwyg3dl;Reddit;2022-11-19 09:53:23;"I can easily believe that.
+
+Easier debugging? Imagine debugging 20 microservices talking to each other. Mother of God.";0
+ix2uti2;Reddit;2022-11-20 10:00:10;The benefit of microservices are a plenty, including scaling a single service as opposed to the whole stack. It also allows a better understanding what is happening with the big picture - if done well. To understand the monolith, you have to understand the code and frameworks. To understand distributed microservice architecture, you have to understand the flow of data. If complexity becomes too big, BPMs such as Camunda and Flowable are an option for the big-big picture. Which was sort of the lesson learned by Netflix guys after doing microservices.;0
+ix0cjyb;Reddit;2022-11-19 20:33:20;"Yes, however most companies are not hundreds or thousands of developers (and even then companies still use monoliths; Google famously has a 2 billion line monolith, same with Microsoft, and any companies that use Rails, like GitHub). Microservices can be useful, however they're overkill for most use cases not at that scale. A startup should not be using microservices, they're just cargo culting at that point.";0
+iwya3wv;Reddit;2022-11-19 08:27:31;"That said maybe I'm making a microservice and don't even know it? We have four contributors and our server does exactly *one* thing. It's a rather complex and messy thing, but it's just one. And it's not huge.
+
+Maybe the real microservice is the code we made along the way?";0
+ix04t41;Reddit;2022-11-19 19:38:09;"1000% this.  The irony of this entire comment chain is some poor dev who is learning programming js gonna waste unseen amounts of time trying to maintain and deploy a microservice architecture for their next fun project.
+
+I honestly feel like only the largest, most complex and highly staffed saas projects should opt for microservices.  The real problem is every tech ceo wants this crap for all the wrong reasons.";0
+iwz6qcm;Reddit;2022-11-19 15:25:14;"There's also extra benefits for teams looking for flexibility. For example, where I work, we have 3 languages that we use in the backend. We use Rails for anywhere where we're serving HTML pages out of the backend, for our lean n mean APIs which are hit by the Web frontend, we grab Elixir, as it's incredibly fast. Where we're doing heavy data transformations and running finance reports we grab Scala, as that's what our Data guys know how to use.
+
+I've found microservices to be incredibly useful for situations where your team wants to be experimenting with new languages or frameworks, because you can take an existing piece, rewrite it in the new language, and then get real world performance data from it running in your stack.
+
+That's basically why we went microservices, we started with a Rails monolith and found Ruby to be slow in places, so we ripped those places out, rewrote them in Elixir/Scala, and got orders of magnitude more performance, without needing the overhead of rebuilding the whole platform in a new language.";0
+iwygsur;Reddit;2022-11-19 10:03:57;"> The team I worked on for ~8 years was disciplined and no one added so much as a single module without oversight
+
+I think you just answered your own question. Not all teams can be like that. Even if three quarters of all software developers were disciplined and careful about what they write, you'd still have teams that just don't have enough of that.
+
+Microservices allow you to be resilient in the face of less disciplined workforces.";0
+iwyhec6;Reddit;2022-11-19 10:12:46;"I think you put forward a great point that you have to have a disciple of modularity in your code if you start with monolithic. But it’s difficult to do that when you have plethora of developers working on same code and management wants asap deliveries.
+
+Huge integration test and even unit test to let developer know that they might be breaking some contract of code is something which I have seen very less in projects. The world wants fast delivery and less error prone and that’s where Microservices plays the role. Plus I am yet to decide if it’s easier to maintain or difficult 
+But Microservices has benefits in terms of scaling and maintaining at development side. You know the Conway’s law , that your code is reflection of your org , migrating to microservice is reverse Conway that way of Code is organising the corporates in separated of concerns and clear boundaries.
+
+I respect you that you were able to manage that application without much worries, but I will rant here that because of code monkeys and  lot of Junior devs around , it become difficult. Even in Microservices world having that disciple is difficult.";0
+iwyflo6;Reddit;2022-11-19 09:46:10;"What counts as ""actual scale"" in your opinion? I generally work on projects used by tens or hundreds of millions of users at a large software company without anything I'd call a microservice. It's entirely possible that I'm wrong about what constitutes a microservice in this context, however.";0
+ix1p7xv;Reddit;2022-11-20 02:42:35;At that point I don't think you're talking about microservices anymore. They're just services, or even separate applications.;0
+iwz4k59;Reddit;2022-11-19 15:06:02;rpc call architecture isnt new, microservices is just the latest iteration. you could do this with com components. microservices are worse because of the tcp method of rpc coms be it sync api or async queue. not to say that rpc pattern downesnt have downfalls. it does. microservices just adds way more;0
+ix182e0;Reddit;2022-11-20 00:25:23;Hmm, ok, I'm not saying I disagree, but out of curiosity how then do you handle user lookup?   Like say you have a search service, a display service, and a recommended product service, but all need to get user information, maybe about the user itself, or maybe about users across org?  I can see there being a few instances of shared databases across microservices.;0
+iwzeol1;Reddit;2022-11-19 16:29:39;"Obviously speaking in the abstract here, but it seems like generally you'd want a service in charge of owning those large data sets, and things that need to take action on them should go through that service.
+
+
+Using microservices is about segregation of responsibility and communication through contracts (partially because at a certain scale, the overhead this adds is dwarfed by the savings you get by being able to pinpoint the malfunctioning service and call on its experts to help), and having different microservices use the same databases and tables is generally* antithetical of that.  It's like if you had multiple procedures sharing the same area of ram, or multiple threads reading/modifying the same instances of objects at once -- there ARE ways to do it properly, but it's costly to do it without introducing problems, so you try to avoid it if you can.
+
+
+*It's generally antithetical in that when people talk about sharing database objects, it seems to be done out of convenience rather than design (""hey, we both kinda care about this same data, let's share this table and ignore the risk that our needs will grow in contradictory ways!"").  If, for some reason, you need to do communication between services and decide that a shared table is the best way and you treat that table specifically as a well-defined data contract between the parts, I don't think that would be against the spirit of microservices.";0
+ix06ri8;Reddit;2022-11-19 19:52:03;You'd use some message broker like RabbitMQ to facilitate comms between services that rely on data from each other. And yes, it's very difficult to design and maintain, which is why 99% of the time you don't actually need microservices.;0
+ix0m9eb;Reddit;2022-11-19 21:42:22;"That isn't a problem with microservices though. That's a problem with failing to be able to test changes like that, before pushing them out.
+
+For example places that don't codify their infrastructure settings, and don't deploy it to a staging environment first to ensure it works.";0
+ix140ve;Reddit;2022-11-19 23:54:10;No instead your entire tech stack goes down when you misconfigure the firewall and your monolith stops serving traffic entirely. Your example is pointless. Neither architecture is resilient to a networking misconfiguration. Arguably microservices are more resilient since the blast radius of a misconfigured network config is some specific aspect of the tech stack going down instead of the entire thing.;0
+iwzm038;Reddit;2022-11-19 17:24:04;AT&T has naming standards for all cloud based infrastructure, microservices, etc…;0
+iwzujlg;Reddit;2022-11-19 18:26:01;"""Now hiring: Tolkien lore expert to resolve disputes on proper naming of microservices.""";0
+ix02wsz;Reddit;2022-11-19 19:24:53;Obviously, but I think I confused what you were talking about now.  Now I think you were talking about having an auth microservice and a separate 2FA auth microservice. I thought you were talking about having a microservice for auth (including 2FA) and couldn't figure out why you thought that was too micro, lol.;0
+iwyyomz;Reddit;2022-11-19 14:08:19;"Yeah, I don't disagree. It's possible to have 100 teams working on a monolith, as long as there are clear delineations. The problem: when you're working in a startup that has radically morphed in direction, scope, and scale, ""clear delineations"" are not abundant. There are far more ""Omegastars"" than there should be in the code, and it's kinda lovely to say, ""hey, billing team... Set up a microservice, pull code out of the monolith and own it."" The cognitive complexity of the monolith gets smaller, and the simplicity of the microservice is, itself, a valuable thing. We have clear ownership from a business domain perspective, and it makes it much easier for our operations people to build relationships with engineers that know the hell out of their space.
+
+Previously, what would happen: ops folks would talk amongst themselves when there was a problem. ""Who's the best engineer to talk to regarding XY and Z?"" ""Well, I don't know about XYZ, but ScabusaurusRex helped me with ABC. Ask them."" I end up helping them, and reinforce the pipeline of ops talking to me about problems. Pretty soon, I can't get any work done and start burning the candle at both ends. Then, I start abusing drugs because all the cool engineers are. And then I'm looking for a bridge to throw myself off of, after my marriage falls apart.
+
+Long story short, microservices save engineer lives. Lol.
+
+(I shouldn't have to say it, but satire at end.)";0
+iwywyyf;Reddit;2022-11-19 13:49:49;"> If one of your teams is full of OOP zealots and another is full of functional zealots, a distributed architecture nips that problem right in the bud because they never have to see or interact with each other's code.
+
+Holy shit, if you allow different teams to write their microservices in a completely different way, you are insane. You still want 100% same guidelines and architecture, or you get complete and utter clusterfuck.";0
+iwzgb8u;Reddit;2022-11-19 16:42:01;Microservices allow you to address the unique performance requirements of each part of a pipeline individually, and prevents bottlenecks that way.;0
+iwzdulf;Reddit;2022-11-19 16:23:16;"This is the only real benefit of microservices I've ever heard. Although... how many different services have different scaling requirements? It's probably an argument for *a few separate services*, not *micro*services.
+
+E.g. I wouldn't expect Youtube to have the video compression happening on the same servers as the web servers. But I also wouldn't expect them to have separate ""comment service"", ""thumbnail service"", ""subtitle service"" and so on.";0
+iwyhkpm;Reddit;2022-11-19 10:15:24;"Sure, but only if those services are using a ton of resources. To me a microservice should be, well, micro. If it's using an entire VM, it's not micro, that's just called a ""server"".
+
+...but maybe that's just me?";0
+ix1qv4c;Reddit;2022-11-20 02:55:37;"Ah, so I think part of my misunderstanding is that I'm talking about large codebases with complex APIs, not necessarily a lot of developers. So the surface area is often huge, but the teams are not. Our codebase probably does, I dunno, a hundred different things, but we package it up into a neat little server that only does a few things and has a simple interface. So most of a thousand internal functions between different DLLs (sometimes written in different languages) but externally something an intern could call if you gave them a few days to code something up.
+
+Microservices didn't used to be something anyone talked about, and yet there was plenty of software that doesn't really fit that category only made by a few devs. I just don't know what to think anymore, but thanks for your response.";0
+iwz64sb;Reddit;2022-11-19 15:20:07;"I’ve been doing this for 23 years and have been on all sides of the table - qa, ops, pd.. I’ve watched my current platform grow from unified monolith builds on ibm hs20 bare metals to microservices container deployments with federated kubernetes on custom hardware skus. Your mileage may vary, for us it’s way better now than it used to be. We run 100x the scale we used to with 1/4 the ops team and we generally measure outages in terms of seconds/minutes instead of hours/days. In terms of code and change velocity alone we are easily 10x just in the last few years. 
+
+Just because you’ve had a bad experience doesn’t make me a liar.";0
+iwyiqoh;Reddit;2022-11-19 10:32:51;"The idea of microservices is that you don't need to debug 20 of them talking to each other.  You debug 1 because the other 19 have well defined APIs which you know work because each one has a test harness.
+
+In my experience coding, testing and debugging microservices isn't the issue, deployments and configuration are the issue.  Releasing 30 microservices because of a spring update which addresses a security vulnerability is painful";0
+ix19jhu;Reddit;2022-11-20 00:36:51;"I'm wondering the same thing for an banking application written in COBOL on which I used to work.
+
+Let's say that I wanted to make a external API to encode wire transfer. I created a routine in COBOL with a well defined and documented API that was exposed to the world. In this I called other routines through their well defined API to retrieve or update the necessary data.
+
+Once it was build I had to add this routine to a container. The build system then automatically build it with only the part of the code needed to run the various API exposed by this container. So I could create a container with only the code for my wire transfer service if I wanted. 
+
+Then these containers were deployed on X servers and they number could scale automatically on each of these servers. Their was a load balancer on front these servers to divide the call. However these container were all connected to the sames databases because we needed ACID.
+
+In my mind this is a monolith :
+
+* only one big shared source code
+* you can call anyone from anywhere
+* a request execution is fully done by on process 
+* the possibility to build custom containers for various API and independently scale them is only a server detail
+
+But reading the comment make me thing that for a lot of people the last point (custom containers and separate scalability by API) is already a big step in the microservices world and isn't possible with a monolith.
+
+I'm really wondering if most developers even known this kind of architectures and that they are possibles. If for them their are only two possible architectures : a big application that do everything and that can't be scaled or micro services. That the old SOA architectures with bigger services don't existe, if the old applications communicating through file exchanges don't exists, and so one...";0
+ix1bqu1;Reddit;2022-11-20 00:54:11;"It’s just one level of growth beyond that. Accounting might have a service for handling generating the payment reports that get sent to employees, one that handles tracking payroll hours, and the reports service would communicate to the time tracking service to generate its data, and so on.
+
+It’s basically once your service has enough features with separate needs to outgrow a single system and you would have multiple teams maintaining those separate features anyway. I used the larger scale business domains as a toy example to show how the monolith pattern leads naturally to the microservice pattern, but in reality it’s usually happening much more granularly once you really scale up.";0
+ix1pmh3;Reddit;2022-11-20 02:45:47;That’s the definition of a microservice architecture though. Splitting out disparate concerns into multiple services to comprise a greater whole.;0
+ix0ra4w;Reddit;2022-11-19 22:18:30;Good, then proponents of microservices need to stop that shit and present some actual pros to their case.;0
+ix0r7k4;Reddit;2022-11-19 22:17:58;"> That isn't a problem with microservices though.
+
+If it's a problem that happens only in microservice architecture, it's a microservice problem.";0
+ix2xmdx;Reddit;2022-11-20 10:40:41;"There comes a point where you cant avoid the ""too many cooks"" problem.  Microservices provide a nice way of standardizing the solution is all.  It's still too much overhead for anything but monster companies who can eat the cost.";0
+ix2dsvf;Reddit;2022-11-20 06:21:03;"Here’s an article I found that explains the differences between SOA and micro services.  In a nutshell, it’s all about the scope of the service that you want to provide.  I’m an SOA, you build a service that’s not targeted to a specific application so it can be reused throughout the enterprise.  With micro services, you make services that are targeted to a specific application. 
+
+If I had to build a large scale web app, I think micro services are the way to go.  Especially if the app has complex regional requirements. 
+
+https://medium.com/microtica/microservices-vs-soa-is-there-any-difference-at-all-2a1e3b66e1be";0
+iwymz98;Reddit;2022-11-19 11:37:03;"A server can host several services. You can technically have a microservice architecture with only one physical server. 
+
+Micro/Nano/Normal services are just marketing.
+
+A service can be a single process as it can also be a pool of servers and processes.";0
+iwypfw0;Reddit;2022-11-19 12:13:07;Have you actually written and deployed microservices? I don't think you have.;0
+iwyv75z;Reddit;2022-11-19 13:29:24;Microservices usually run in docker containers, on something like kubernetes. Where you get the benefits of elastic scaling and fault tolerance.;0
+ix129i9;Reddit;2022-11-19 23:40:40;"""Micro"" refers to the scope of responsibility, not to the size of the hardware it runs on or the scale it operates at.
+
+You can have a microservice that has one responsibility but serves 10000 TPS distributed across a dozen VMs behind a load balancer, and it's still a microservice if its job is only to serve that one specific role as a part of the company's greater architecture.
+
+That's all microservice architecture is. Distribution of distinct concerns across separate deployed units.";0
+iwypcs7;Reddit;2022-11-19 12:11:56;I've been working on a microservice based app for the past two years and I don't know how to answer your question since I don't know what the over the top complexity is.;0
+ix127ei;Reddit;2022-11-19 23:40:13;"I'll play the devil avocate there. How do you know that it's due to the microservices architecture and not the change of organisation/processes/company culture/tooling that had to come at the same time ?
+
+In other word, is the reason of the success the architecture itself or the changes that were forced to come with it ? 
+
+If it's the changes, then how can we guarantee that'll generally apply to other that make the shift ?";0
+ix16ltu;Reddit;2022-11-20 00:14:08;">You debug 1 because the other 19 have well defined APIs
+
+In theory. It's easy to correctly define the technical interface and the data format, but it's hard for the actual functional behaviour of these contrats.
+
+I have never done microservices but I have worked with other SOA. The bugs caused by a false assumption made by the caller of a service where numerous. You can refine your documentations and tests to reduce them but they will never disappear completely .";0
+ix1j2qj;Reddit;2022-11-20 01:52:49;"Whoa dude, where are your upvotes? This is great reading!
+
+No idea what I'd call that... maybe a Chameleon Monolith? Or maybe the \_services\_ are micro, but the code isn't? I mean, you can still build and release a bunch of microservices in the same repo on the same release cycle, right?
+
+I suspect you'll get a bunch of answers to this question if anyone bothers to read it. Thanks again for your insight.
+
+Also, COBOL, eh? I've been meaning to ask a COBOL programmer what algorithm they use to determine optimal placement of their second house.";0
+ix1ttsd;Reddit;2022-11-20 03:19:59;Speaking to that last point if you find yourself thinking you need a microservice architecture to facilitate business needs that screams to me that business has gone way out of scope for the product.  One is actually indicative of the other.;0
+ixb3vrq;Reddit;2022-11-22 03:49:29;A properly designed monolith is just as easy to version, scale, and release as a well designed microservice.  Well architected monoliths are easier to design than a well architected microservice solution, but microservices are somewhat easier to manage from an organizational leadership point of view than a monolith.  There is a lot of kool-aid being drank on both sides though, which is obvious from your last paragraph.;0
+iwyj379;Reddit;2022-11-19 10:38:08;Ah, I'm used to working on products with a few hundred people working on them, but with individual teams small enough that even a large, complex application is still neatly delineated from the rest of things. The sheer size of the APIs makes it hard for me to classify the components as microservices, especially as they generally don't involve network connections, but we definitely have our share of hard API barriers.;0
+ix1n7ia;Reddit;2022-11-20 02:26:24;"Of course, and we typically do throw more than one service on a single server when we can, but I work in a very computationally demanding field (ML at scale, yay!) so often that kills latency.
+
+I guess for me part of it is API complexity, though I'm starting to realize that we have a lot of internal API complexity but our external network APIs typically aren't complex at all. Perhaps the microservice is made up of a bunch of insanely complicated software that's released internally as monoliths but given enough makeup to look like a microservice to the rest of the world?";0
+ix1nf1r;Reddit;2022-11-20 02:28:06;I honestly can't tell. Simple API, does a single thing, though that thing is really complex internally, and involves multiple different components written in \~4 different programming languages. Maybe that's still a microservice?;0
+iwzbrb7;Reddit;2022-11-19 16:07:07;I guarantee you most of the people here saying they don't see the value in microservices have no idea what kubernetes even does.;0
+ix1kcrg;Reddit;2022-11-20 02:03:08;"Wikipedia defines a microservice as:
+
+>an architectural pattern that arranges an application as a collection of loosely-coupled, fine-grained services, communicating through lightweight protocols.
+
+That matches what you said and, while not in line with my intuition, makes sense the way you put it (where are your upvotes?). I am wondering if the server I architected at work is accidentally a microservice, despite being (necessarily) a huge resource hog. It does exactly ""one"" thing (processing an ML workload which has a ton of inputs/outputs) and the API is simple in that there's really only a single operation: process some input data and get the output of the ML op. So I guess that is a microservice, despite requiring super expensive servers just to run a single instance?";0
+ix14tga;Reddit;2022-11-20 00:00:18;">You need to use some data from another class (or even program)? Oh well, let's throw in a direct reference and just access it. 
+
+That's the real sin of monolith. Strangely it also seems to come from object oriented languages. If your only way to access the data is to call a well defined API, you'll do it. That this is done through a remote call to another process or through a function that is executed in the same process is only a detail. What's important is that the API is a black box for the caller and that you can't mess with it.
+
+If the interfaces are respected it even become possible to generate executables that only contains the code necessary for a specific external API from your big monolith stack of code. You can just say to your build system : create make a container for the external API X and it'll automatically create an executable with the code for the API X and all the internal API called by it. (I have seen it done in the wild).
+
+I have the impression that for many people a monolith is automatically a big ball of mud and that the using microservices helps solving this issue by forcing the use of well defined interfaces. So for the few of us that have worked with monoliths that were not a big ball of mud the advantage of microservices become less clear and seems mainly linked to heavy scalability matters that we don't encounter often (we are no all working in FAANG)";0
+ix0joch;Reddit;2022-11-19 21:24:04;If they didn’t test in a microservice they weren’t going to test in a monolith, either.;0
+iwyti1a;Reddit;2022-11-19 13:08:19;"There is a lot of confusion over microservices because there is no standard definition, but IMO you are describing the esense of the idea behind them. 
+
+In my most simplified view possible, there are two reasons to split something into microservices (naturally being simplified there are innumerable exceptions to this):
+
+1. ""Organisational"". When you want to give separate teams absolute autonomy. Complete autonomy over style, language, release cadence, etc.
+2. ""Performance"". For example if you have module A doing some queue processing task, and module B providing some HTTP API. It might make sense to split them so that module As queue being especially busy does not starve module B of resources.
+
+There is a crapload of nuance to it of course. It is very easy to get it wrong and make more problems for yourself.";0
+ix0vum1;Reddit;2022-11-19 22:52:01;All of the complexity of microservices with none of the benefits... At that point you **would** be better off with a non-distributed monolith.;0
+ix6mkvr;Reddit;2022-11-21 04:28:57;"I mean, I don't have to imagine, I work at a large company known for the scale at which it operates. I guess for me ""monolith"" doesn't mean ""the entire product is a single repo"" but rather ""significant, complex pieces of the project have not been decomposed into separate projects"". None of the custom pieces have more than \~20 people working on them. Some of the infrastructure stuff does, but I don't work with that.
+
+In any case, I think my idea of ""micro"" is the stumbling block for me here. I don't want 10,000 devs working on the same codebase, but I have no problem with having a single codebase worked on by, say, 10 devs that's a million lines of code and has thousands of files, etc. I'm all for decomposing things at the *product* level, but I don't see what's wrong with having large, complex services that are made up of multiple projects within them that have nontrivial interdependencies between them as long as the number of devs that have to work together at any one time is kept manageable. So strong, carefully designed API barriers between large pieces of the product, sure, but once you've broken teams down small enough having complex interfaces between them is totally feasible if they are managed well, e.g. an onion-layer model around a carefully designed core, where each layer is well-defined and coordinated.
+
+Maybe call each partition a microservice because it looks that way externally, but inside it's made of individual projects that are complex and involve a lot of complex interactions? Kind of like how in large companies a person tends to interact with many people inside their business division and few who are outside (with notable exceptions where their job is to perform that interfacing).";0
+iwz3nkw;Reddit;2022-11-19 14:57:39;There is a lot of nuance to performance. It’s efficient and nice when you can scale up one component without having to scale everything else.  But in my experience, there is an overall performance penalty to microservices due to loose coupling and serialization/deserialization. Still we don’t often care because it’s more maintainable and that saves more money than extra hardware costs.;0
+ix1ou2o;Reddit;2022-11-20 02:39:27;"We don't have hundreds of people working on that one specific project, just a lot of people over 25 years and a hell of a lot of code. It's internally very complex, sadly by necessity (the domain is very complex and it's an internal toolkit with a very complex API).
+
+But I guess we really are making microservices that combine a bunch of really complicated things together (probably most of a thousand functions in the internal APIs *between different projects*) but using a very simple network API that anyone could throw together a client for in maybe two days, if that. It doesn't feel ""micro"" to me because the internal stuff is over a million lines of code in multiple languages, but I guess from a systems point of view it's been really neatly abstracted from everything else and can plug into things like Docker and Kubernetes and OpenServiceMesh and anything else that can handle things like gRPC. We're talking maybe 50-some people on the product, and it's very neatly divided by responsibility, so maybe no one calls it microservices but they really are? Hard for me to imagine a million lines of code being ""micro"", but I don't deal with systems at this level anymore, so I don't keep up with the jargon as well as I should...";0
+ix1p3gc;Reddit;2022-11-20 02:41:33;One reason it's hard for me to think about it that way is that our individual pieces of software have ridiculously complicated APIs for some of their stuff. But they are put behind a network façade that's quite simple. So maybe it's externally a microservice, but internally several monoliths that have strong interdependencies, despite being written in multiple languages.;0
+ix90l78;Reddit;2022-11-21 18:54:04;"> Imagine you have a reverse proxy sitting in front of your application. You need to add a simple, temporary rule to do a 301 redirect to some other page (let’s say, a maintenance page). In a “monolith” you have many ways to handle this. The simplest would be to use your favourite editor, add a line in a file, restart service. 
+
+Please tell me that no one allows you within 100 miles of a production deployment.  I can't think of a more efficient way for you to say that you don't really understand this than to imply that an appropriate way to update something in production is to just have someone (a developer, maybe?) just open up a file on a prod machine in their favorite editor and make changes.  I mean, there are probably early in career folks who might think this is ok, because they are just learning.  It is the job of everyone around them to teach them that this is NOT OK.  The fact that you know that deployment pipelines exist tells me that you DO know enough to know that this is ok, but for some reason you just admitted to the world that you think it is ok.
+
+(Just a few reasons why this is insane...  First, who has write access to prod?  Do they always have write access to prod?  How is this change implemented?  Do we just trust this person to not make any mistakes?  Do you at least make them share their screen so that someone watches them?  Is this change committed to any source control?  Do we just trust them to commit this change later?  What does this imply for how the environment is built in the first place?  Is any of this automated?  If some of it is, why isn't all of it automated?  What if there are multiple instances of the monolith?  Do we just tell this person to make the same change to all 15 or 200 instances of the monolith that are deployed?  Do we have any sort of quality checks other than just praying that the person doesn't make some mistake when editing and saving these files?  What if some disaster occurs and we need to rebuild the production environment?  Does this person just have to be available 24 hours/day so they can make the same manual updates when redeploying the DR environment?  Do we intentionally choose not to make this update to UAT or QA?  Does QA or any other user get a chance to verify that the change we are making is really what they want?).  I could go on for DAYS as to why what you describe as a simple change is insane and should never be considered acceptable.  Perhaps this answer explains why you think that deploying microservices is infinitely more complex that deploying a monolist.";0
+ix9tjad;Reddit;2022-11-21 22:03:55;"> I provided an extremely high level example architecture and you’re focusing on unnecessary details.
+
+The problem is that you didn't choose a high level example, you chose a nonsense example.  You said that a monolith isn't complicated because a monolith allows you to do something that you would never do and that, for some unknown reason, you technically CANNOT do with a microservice (I also think you don't understand that using containers is an implementation decision and not a requirement for using microservices).  And I'm not sure I even understand why you've made those assumptions and without understanding that, I cannot even begin to say why you're wrong.
+
+I mean, if you are going to do crazy things, why wouldn't you allow someone to do something crazy with the microservice that controls 302 redirects?  Why have you even already decided that I'm using Kubernetes?  You can easily deploy instances of a monolith as containers orchestrated by Kubernetes.  You can also deploy them as containers orchestrated by something else.
+
+> Organizational processes surrounding change management, release management, operations, etc were left out by design.
+
+Of course, because that is the only way that the 'simple' example could ever be considered.  But, in reality, no one would ever do that.  So, the make believe scenario might be simple, but, so what?
+
+> Hopefully my response will be useful for someone else trying to understand what challenges one may see architecturally and why a lot of containers introduce new challenges for organizations.
+
+I don't see how.  Containerization has little to do with the discussion at hand.  Containerization is not something people just decide to do.  It is always done in response to some need (I need an orchestration service like K8S to manage how my application scales, for example.  That has nothing to do with microservices vs. a monolith).  Again, it feels like you really don't understand this and your attempts to explain it make that seem more certain.";0

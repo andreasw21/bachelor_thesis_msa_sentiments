@@ -1,0 +1,9 @@
+
+Sentiment Analysis Summary for the files in ./Labelled_Discussions/All_Tools_Combined: 
+ ['Labelled_Discussions\\All_Tools_Combined\\combined.csv']
+------------------------------
+Total Entries: 100
+Positive Sentiments: 35 (35.00%)
+Negative Sentiments: 26 (26.00%)
+Neutral Sentiments:  39 (39.00%)
+------------------------------

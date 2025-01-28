@@ -1,0 +1,9 @@
+
+Sentiment Analysis Summary for the files in ./Labelled_Discussions/Senti4SD/: 
+ ['Labelled_Discussions\\Senti4SD\\Senti4SD_predicted.csv']
+------------------------------
+Total Entries: 97
+Positive Sentiments: 21 (21.65%)
+Negative Sentiments: 32 (32.99%)
+Neutral Sentiments:  44 (45.36%)
+------------------------------
